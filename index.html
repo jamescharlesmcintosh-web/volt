@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>VOLT — Precision Barbering / Brooklyn</title>
+<meta name="description" content="VOLT. Precision barbering by Marcus Hayes. Brooklyn, New York. Every line is a decision." />
+<meta name="theme-color" content="#08080a" />
+<link rel="preload" href="assets/css/fonts.css" as="style" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308080a'/%3E%3Cpath d='M7 7h6l3 12 3-12h6l-6 18h-6z' fill='%23eef3f7'/%3E%3C/svg%3E" />
+</head>
+<body class="is-intro">
+
+<!-- ══════════════════════════════ SVG LIBRARY ══════════════════════════════ -->
+<svg class="v-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+
+  <!-- ── chrome + black material system ── -->
+  <linearGradient id="cpChrome" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#0d0e10"/>
+    <stop offset=".07"  stop-color="#69727a"/>
+    <stop offset=".17"  stop-color="#eef2f6"/>
+    <stop offset=".29"  stop-color="#a4adb6"/>
+    <stop offset=".41"  stop-color="#fafcfe"/>
+    <stop offset=".53"  stop-color="#6e767e"/>
+    <stop offset=".66"  stop-color="#d3d9e0"/>
+    <stop offset=".79"  stop-color="#4e555c"/>
+    <stop offset=".90"  stop-color="#b6bec6"/>
+    <stop offset="1"    stop-color="#14161a"/>
+  </linearGradient>
+  <linearGradient id="cpChromeH" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#59616a"/>
+    <stop offset=".14"  stop-color="#f2f6fa"/>
+    <stop offset=".34"  stop-color="#98a1aa"/>
+    <stop offset=".52"  stop-color="#fdfeff"/>
+    <stop offset=".72"  stop-color="#767e87"/>
+    <stop offset=".88"  stop-color="#c9d0d7"/>
+    <stop offset="1"    stop-color="#2b3036"/>
+  </linearGradient>
+  <linearGradient id="cpBlack" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#33363d"/>
+    <stop offset=".16"  stop-color="#14161a"/>
+    <stop offset=".55"  stop-color="#08090b"/>
+    <stop offset=".84"  stop-color="#1a1d22"/>
+    <stop offset="1"    stop-color="#050506"/>
+  </linearGradient>
+  <linearGradient id="cpEdge" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset=".18"  stop-color="#eaf6ff" stop-opacity="1"/>
+    <stop offset=".5"   stop-color="#ffffff" stop-opacity="1"/>
+    <stop offset=".82"  stop-color="#d8efff" stop-opacity="1"/>
+    <stop offset="1"    stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+
+  <!-- blade teeth: fixed comb -->
+  <pattern id="cpTeethF" x="0" y="70" width="8" height="70" patternUnits="userSpaceOnUse">
+    <path d="M0 0 H5.4 L8 5 V65 L5.4 70 H0 Z" fill="url(#cpChromeH)"/>
+  </pattern>
+  <!-- blade teeth: moving comb (staggered) -->
+  <pattern id="cpTeethM" x="4" y="70" width="8" height="70" patternUnits="userSpaceOnUse">
+    <path d="M0 0 H5.4 L8 5 V65 L5.4 70 H0 Z" fill="url(#cpChromeH)"/>
+  </pattern>
+
+  <filter id="cpGlow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+  <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+
+  <!-- ══════════════ THE CLIPPER — director of the experience ══════════════ -->
+  <g id="volt-clipper">
+    <!-- tail / charging loop -->
+    <rect x="6" y="84" width="54" height="42" rx="15" fill="url(#cpBlack)"/>
+    <rect x="22" y="96" width="22" height="18" rx="7" fill="none" stroke="#3a3e45" stroke-width="5"/>
+    <!-- rear housing -->
+    <rect x="46" y="60" width="116" height="90" rx="28" fill="url(#cpBlack)"/>
+    <rect x="56" y="66" width="94" height="14" rx="7" fill="#4b5158" opacity=".45"/>
+    <!-- main chrome body -->
+    <rect x="130" y="54" width="310" height="102" rx="36" fill="url(#cpChrome)"/>
+    <!-- black upper housing -->
+    <path d="M162 54 H404 a36 36 0 0 1 34 24 H162 Z" fill="url(#cpBlack)"/>
+    <rect x="150" y="54" width="286" height="30" rx="15" fill="url(#cpBlack)"/>
+    <!-- engraved mark -->
+    <text x="300" y="120" text-anchor="middle" font-family="'Archivo Black',sans-serif" font-size="30"
+          letter-spacing="9" fill="#0c0e11" opacity=".85">VOLT</text>
+    <text x="300" y="118.4" text-anchor="middle" font-family="'Archivo Black',sans-serif" font-size="30"
+          letter-spacing="9" fill="#8e969e" opacity=".55">VOLT</text>
+    <line x1="256" y1="132" x2="344" y2="132" stroke="#15181c" stroke-width="2" opacity=".8"/>
+    <text x="300" y="146" text-anchor="middle" font-family="'Space Mono',monospace" font-size="8.5"
+          letter-spacing="3.4" fill="#2c3138">PROFESSIONAL</text>
+    <!-- screws -->
+    <g fill="#0e1013">
+      <circle cx="176" cy="130" r="7"/><circle cx="424" cy="130" r="7"/>
+    </g>
+    <g stroke="#6d757d" stroke-width="1.6" opacity=".85">
+      <path d="M171 130 h10 M176 125 v10"/><path d="M419 130 h10 M424 125 v10"/>
+    </g>
+    <!-- taper lever -->
+    <rect x="378" y="150" width="86" height="26" rx="11" fill="url(#cpChromeH)"/>
+    <g stroke="#31363c" stroke-width="1.5" opacity=".7">
+      <path d="M392 155 v16 M402 155 v16 M412 155 v16 M422 155 v16"/>
+    </g>
+    <rect x="446" y="146" width="34" height="18" rx="7" fill="url(#cpBlack)"/>
+
+    <!-- ── BLADE ASSEMBLY ── -->
+    <rect x="416" y="46" width="76" height="118" rx="22" fill="url(#cpBlack)"/>
+    <rect x="430" y="52" width="46" height="14" rx="6" fill="#3d434a" opacity=".5"/>
+    <!-- fixed blade plate -->
+    <path d="M470 66 H546 a4 4 0 0 1 4 4 v72 a4 4 0 0 1 -4 4 H470 Z" fill="url(#cpChromeH)"/>
+    <!-- comb gap field -->
+    <rect x="498" y="70" width="48" height="70" fill="#040405"/>
+    <rect x="498" y="70" width="48" height="70" fill="url(#cpTeethF)"/>
+    <!-- moving blade (upper, staggered) -->
+    <g class="cp-move">
+      <rect x="452" y="66" width="52" height="38" rx="4" fill="url(#cpChrome)"/>
+      <rect x="494" y="70" width="58" height="34" fill="#040405"/>
+      <rect x="494" y="70" width="58" height="34" fill="url(#cpTeethM)"/>
+      <rect x="452" y="66" width="52" height="5" rx="2.5" fill="#0b0d10" opacity=".6"/>
+    </g>
+    <!-- cutting edge -->
+    <g class="cp-edge">
+      <rect x="546" y="70" width="4" height="70" fill="url(#cpEdge)"/>
+      <rect x="545" y="70" width="7" height="70" fill="#dff1ff" filter="url(#cpGlow)" opacity=".55"/>
+    </g>
+    <!-- blade base shadow line -->
+    <path d="M470 112 H546" stroke="#0b0d10" stroke-width="3" opacity=".55"/>
+  </g>
+
+  <!-- ═══════════════════ EDITORIAL PLATE: THE BARBER ═══════════════════ -->
+  <linearGradient id="pl-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16181d"/><stop offset=".55" stop-color="#0c0d10"/>
+    <stop offset="1" stop-color="#050506"/>
+  </linearGradient>
+  <radialGradient id="pl-spot" cx=".66" cy=".26" r=".62">
+    <stop offset="0" stop-color="#7f8d9c" stop-opacity=".55"/>
+    <stop offset=".45" stop-color="#2b3138" stop-opacity=".35"/>
+    <stop offset="1" stop-color="#050506" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="pl-rim" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset=".4" stop-color="#eaf6ff" stop-opacity=".95"/>
+    <stop offset="1" stop-color="#9fd4ff" stop-opacity=".15"/>
+  </linearGradient>
+  <linearGradient id="pl-body" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#070709"/><stop offset=".55" stop-color="#14161b"/>
+    <stop offset="1" stop-color="#232730"/>
+  </linearGradient>
+  <linearGradient id="pl-hair" x1=".2" y1="0" x2=".7" y2="1">
+    <stop offset="0" stop-color="#020203"/><stop offset=".62" stop-color="#08090c"/>
+    <stop offset="1" stop-color="#1a1d23"/>
+  </linearGradient>
+  <linearGradient id="pl-hot" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ff3b1f" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#ff5a30"/>
+    <stop offset="1" stop-color="#ff3b1f" stop-opacity="0"/>
+  </linearGradient>
+
+  <symbol id="art-portrait" viewBox="0 0 600 820">
+    <rect width="600" height="820" fill="url(#pl-bg)"/>
+    <rect width="600" height="820" fill="url(#pl-spot)"/>
+    <!-- geometry guides -->
+    <g stroke="#8ea3b8" stroke-width="1" opacity=".22">
+      <path d="M0 300 H600 M0 470 H600 M0 640 H600"/>
+      <path d="M120 0 V820 M480 0 V820"/>
+    </g>
+    <!-- head -->
+    <path class="pt-head" d="M246 812 V606 C246 578 232 560 214 540 C186 508 170 466 168 420
+      C165 350 186 274 232 218 C282 158 356 130 424 148 C484 164 524 216 528 282
+      C530 312 524 336 514 356 C524 370 540 396 546 416 C551 433 540 442 520 444
+      C508 446 500 454 500 466 C504 480 520 488 520 502 C520 518 500 524 490 530
+      C500 544 518 558 516 584 C514 614 486 638 448 646 C420 652 396 656 384 670
+      V812 Z" fill="url(#pl-body)"/>
+    <!-- hair mass with fade -->
+    <path d="M168 424 C165 350 186 274 232 218 C282 158 356 130 424 148
+      C484 164 524 216 528 282 C530 308 526 330 517 350
+      C498 302 468 268 428 252 C372 230 300 248 254 294
+      C216 332 200 384 197 436 C195 464 193 486 188 506 Z"
+      fill="url(#pl-hair)"/>
+    <!-- fade band -->
+    <path d="M186 470 C196 420 214 372 248 336 C288 294 344 278 396 288
+      C444 298 484 328 504 372 C470 340 428 322 382 322
+      C320 322 258 356 226 408 C204 444 196 486 196 520 Z"
+      fill="#0a0b0e" opacity=".55"/>
+    <!-- rim light: front contour -->
+    <path d="M424 148 C484 164 524 216 528 282 C530 312 524 336 514 356
+      C524 370 540 396 546 416 C551 433 540 442 520 444 C508 446 500 454 500 466
+      C504 480 520 488 520 502 C520 518 500 524 490 530 C500 544 518 558 516 584
+      C514 614 486 638 448 646"
+      fill="none" stroke="url(#pl-rim)" stroke-width="4" stroke-linecap="round"/>
+    <!-- warm back rim -->
+    <path d="M246 812 V606 C246 578 232 560 214 540 C186 508 170 466 168 420
+      C165 350 186 274 232 218"
+      fill="none" stroke="#ffd0a8" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+    <!-- ear -->
+    <path d="M330 372 C352 366 366 384 362 408 C358 430 344 442 330 438"
+      fill="none" stroke="#3a4049" stroke-width="4" stroke-linecap="round"/>
+    <!-- cut line across the fade -->
+    <rect x="150" y="418" width="330" height="3" fill="url(#pl-hot)"/>
+    <!-- clipper in hand (silhouette) -->
+    <g transform="translate(352 452) rotate(-24) scale(.42)" opacity=".92">
+      <use href="#volt-clipper"/>
+    </g>
+    <text x="42" y="770" font-family="'Space Mono',monospace" font-size="15" letter-spacing="6"
+          fill="#7f8b97">CHAIR NO. 01</text>
+  </symbol>
+
+  <!-- ═══════════════════ WORK PLATE 01 — SKIN FADE ═══════════════════ -->
+  <symbol id="art-fade" viewBox="0 0 600 760">
+    <rect width="600" height="760" fill="url(#pl-bg)"/>
+    <rect width="600" height="760" fill="url(#pl-spot)" opacity=".7"/>
+    <g stroke="#93a7bb" stroke-width="1" opacity=".2"><path d="M0 180 H600 M0 360 H600 M0 540 H600"/></g>
+    <!-- skull / back of head -->
+    <ellipse cx="300" cy="330" rx="212" ry="238" fill="url(#pl-body)"/>
+    <!-- hair with skin fade gradient -->
+    <clipPath id="cp-skull"><ellipse cx="300" cy="330" rx="212" ry="238"/></clipPath>
+    <g clip-path="url(#cp-skull)">
+      <rect x="80" y="80" width="440" height="330" fill="url(#pl-hair)"/>
+      <rect x="80" y="300" width="440" height="150" fill="url(#pl-hair)" opacity=".65"/>
+      <rect x="80" y="400" width="440" height="90" fill="#0e1014" opacity=".5"/>
+      <g stroke="#2b3037" stroke-width="2" opacity=".55">
+        <path d="M80 330 H520 M80 366 H520 M80 402 H520 M80 438 H520"/>
+      </g>
+    </g>
+    <!-- neck + shoulders -->
+    <path d="M212 540 h176 v96 h60 v124 H152 v-124 h60 Z" fill="url(#pl-body)"/>
+    <!-- rim -->
+    <path d="M96 340 C96 206 186 96 300 96 C414 96 504 206 504 340"
+      fill="none" stroke="url(#pl-rim)" stroke-width="4"/>
+    <path d="M88 350 C88 480 168 574 300 574" fill="none" stroke="#ffd0a8" stroke-width="3" opacity=".45"/>
+    <!-- guide arc -->
+    <path d="M110 470 C190 528 410 528 490 470" fill="none" stroke="#ff5a30" stroke-width="3" opacity=".85"/>
+    <g transform="translate(360 430) rotate(-30) scale(.4)"><use href="#volt-clipper"/></g>
+    <text x="36" y="716" font-family="'Space Mono',monospace" font-size="14" letter-spacing="6" fill="#7f8b97">GRADUATION / 0.5 → 1.5</text>
+  </symbol>
+
+  <!-- ═══════════════════ WORK PLATE 02 — LINE-UP ═══════════════════ -->
+  <symbol id="art-lineup" viewBox="0 0 600 760">
+    <rect width="600" height="760" fill="url(#pl-bg)"/>
+    <rect width="600" height="760" fill="url(#pl-spot)" opacity=".55"/>
+    <!-- forehead arc -->
+    <path d="M-40 470 C60 250 240 140 400 168 C520 190 600 274 640 400 V760 H-40 Z"
+      fill="url(#pl-body)"/>
+    <!-- hair block above the line -->
+    <path d="M-40 452 C60 236 244 126 404 154 C524 176 604 258 644 384
+      V300 C600 176 500 96 380 78 C210 52 40 150 -40 356 Z" fill="url(#pl-hair)"/>
+    <path d="M-40 452 C60 236 244 126 404 154 C524 176 604 258 644 384"
+      fill="none" stroke="url(#pl-rim)" stroke-width="5"/>
+    <!-- the line -->
+    <rect x="0" y="446" width="600" height="5" fill="#eef6ff"/>
+    <rect x="0" y="446" width="600" height="5" fill="#bfe4ff" filter="url(#softGlow)" opacity=".6"/>
+    <rect x="0" y="460" width="600" height="1.5" fill="#ff5a30" opacity=".9"/>
+    <!-- comb -->
+    <g transform="translate(300 560) rotate(-8)">
+      <rect x="-230" y="-18" width="460" height="34" rx="8" fill="url(#cpChromeH)"/>
+      <g fill="url(#cpChromeH)">
+        <rect x="-222" y="14" width="7" height="72" rx="3"/><rect x="-196" y="14" width="7" height="72" rx="3"/>
+        <rect x="-170" y="14" width="7" height="72" rx="3"/><rect x="-144" y="14" width="7" height="72" rx="3"/>
+        <rect x="-118" y="14" width="7" height="72" rx="3"/><rect x="-92" y="14" width="7" height="72" rx="3"/>
+        <rect x="-66" y="14" width="7" height="72" rx="3"/><rect x="-40" y="14" width="7" height="72" rx="3"/>
+        <rect x="-14" y="14" width="7" height="72" rx="3"/><rect x="12" y="14" width="7" height="72" rx="3"/>
+        <rect x="38" y="14" width="7" height="72" rx="3"/><rect x="64" y="14" width="7" height="72" rx="3"/>
+        <rect x="90" y="14" width="7" height="72" rx="3"/><rect x="116" y="14" width="7" height="72" rx="3"/>
+        <rect x="142" y="14" width="7" height="72" rx="3"/><rect x="168" y="14" width="7" height="72" rx="3"/>
+        <rect x="194" y="14" width="7" height="72" rx="3"/>
+      </g>
+    </g>
+    <text x="36" y="716" font-family="'Space Mono',monospace" font-size="14" letter-spacing="6" fill="#7f8b97">TAPER / 90° / ZERO GUARD</text>
+  </symbol>
+
+  <!-- ═══════════════════ WORK PLATE 03 — BEARD ═══════════════════ -->
+  <symbol id="art-beard" viewBox="0 0 600 760">
+    <rect width="600" height="760" fill="url(#pl-bg)"/>
+    <rect width="600" height="760" fill="url(#pl-spot)" opacity=".6"/>
+    <g stroke="#93a7bb" stroke-width="1" opacity=".18"><path d="M0 240 H600 M0 520 H600 M300 0 V760"/></g>
+    <!-- jaw profile crop (facing right) -->
+    <path d="M120 760 V430 C120 384 148 344 192 316 C236 288 268 244 276 196
+      C282 158 306 130 348 122 C412 110 470 152 484 214
+      C494 258 486 296 470 322 C486 336 508 366 514 392
+      C520 418 504 430 480 432 C466 434 458 444 458 458
+      C462 476 482 486 482 504 C482 524 456 532 444 540
+      C458 558 480 578 478 612 C476 656 440 692 392 704
+      C356 714 330 720 316 736 V760 Z" fill="url(#pl-body)"/>
+    <!-- beard mass -->
+    <path d="M470 322 C486 336 508 366 514 392 C520 418 504 430 480 432
+      C466 434 458 444 458 458 C462 476 482 486 482 504 C482 524 456 532 444 540
+      C458 558 480 578 478 612 C476 656 440 692 392 704
+      C336 718 286 706 254 674 C222 642 210 596 218 552
+      C228 496 262 452 306 428 C344 408 392 402 434 414 Z"
+      fill="url(#pl-hair)"/>
+    <path d="M254 674 C222 642 210 596 218 552 C228 496 262 452 306 428"
+      fill="none" stroke="url(#pl-rim)" stroke-width="4" opacity=".8"/>
+    <!-- rim light on profile -->
+    <path d="M348 122 C412 110 470 152 484 214 C494 258 486 296 470 322
+      C486 336 508 366 514 392 C520 418 504 430 480 432"
+      fill="none" stroke="url(#pl-rim)" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- cheek line -->
+    <path d="M330 400 C372 424 412 470 430 528" fill="none" stroke="#ff5a30" stroke-width="3.5"/>
+    <g transform="translate(392 470) rotate(-18) scale(.38)"><use href="#volt-clipper"/></g>
+    <text x="36" y="716" font-family="'Space Mono',monospace" font-size="14" letter-spacing="6" fill="#7f8b97">STRUCTURE / CHEEK CONTOUR</text>
+  </symbol>
+
+  <!-- ═══════════════════ WORK PLATE 04 — FINISH ═══════════════════ -->
+  <symbol id="art-finish" viewBox="0 0 600 760">
+    <rect width="600" height="760" fill="url(#pl-bg)"/>
+    <radialGradient id="pl-spot2" cx=".5" cy=".42" r=".55">
+      <stop offset="0" stop-color="#95a5b6" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#050506" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="600" height="760" fill="url(#pl-spot2)"/>
+    <g stroke="#93a7bb" stroke-width="1" opacity=".18">
+      <path d="M0 120 H600 M0 640 H600 M120 0 V760 M480 0 V760"/>
+    </g>
+    <!-- mirror ring -->
+    <circle cx="300" cy="360" r="228" fill="none" stroke="#2b3138" stroke-width="2"/>
+    <circle cx="300" cy="360" r="228" fill="none" stroke="url(#pl-rim)" stroke-width="3" stroke-dasharray="360 1200"/>
+    <!-- hero clipper -->
+    <g transform="translate(300 352) rotate(-34) scale(.82) translate(-280 -105)">
+      <use href="#volt-clipper"/>
+    </g>
+    <!-- reflection -->
+    <g transform="translate(300 700) scale(.82 -0.5) translate(-280 -105)" opacity=".14">
+      <use href="#volt-clipper"/>
+    </g>
+    <!-- hot rule -->
+    <rect x="110" y="596" width="380" height="3" fill="url(#pl-hot)"/>
+    <text x="300" y="646" text-anchor="middle" font-family="'Archivo Black',sans-serif"
+          font-size="54" letter-spacing="14" fill="#e9eef3">MMXXIII</text>
+    <text x="36" y="716" font-family="'Space Mono',monospace" font-size="14" letter-spacing="6" fill="#7f8b97">DETAIL / TONIC + TOWEL</text>
+  </symbol>
+
+  <!-- ═══════════════════ TYPE / TEXTURE HELPERS ═══════════════════ -->
+  <symbol id="art-halftone" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.4" fill="#ffffff"/>
+    </pattern>
+    <rect width="100" height="100" fill="url(#ht)"/>
+  </symbol>
+</defs>
+</svg>
+
+<!-- ══════════════════════════════ ATMOSPHERE ══════════════════════════════ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<canvas id="sparks" class="sparks" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════ CURSOR ══════════════════════════════ -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><span class="cursor__label">CUT</span></div>
+</div>
+
+<!-- ══════════════════════════ INTRO SEQUENCE ══════════════════════════ -->
+<div class="intro" id="intro">
+  <div class="intro__line"><i></i></div>
+  <div class="intro__meta">
+    <span class="intro__tag">VOLT / PRECISION PASS</span>
+    <span class="intro__count" id="introCount">000</span>
+  </div>
+  <div class="intro__skip" id="introSkip">CLICK TO SKIP</div>
+</div>
+
+<!-- ═════════════════════════ THE CLIPPER (director) ═════════════════════════ -->
+<div class="edge" id="edge" aria-hidden="true"></div>
+<div class="clipper" id="clipper" aria-hidden="true">
+  <div class="clipper__halo"></div>
+  <svg class="clipper__svg" viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg"><use href="#volt-clipper"/></svg>
+</div>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#top" data-cursor="link">
+    <span class="nav__bolt">ϟ</span>VOLT
+  </a>
+  <nav class="nav__links">
+    <a href="#pass"  data-cursor="link"><i>01</i>The Pass</a>
+    <a href="#work"  data-cursor="link"><i>02</i>Work</a>
+    <a href="#menu"  data-cursor="link"><i>03</i>Menu</a>
+    <a href="#man"   data-cursor="link"><i>04</i>The Man</a>
+  </nav>
+  <a class="nav__cta" href="#book" data-cursor="cut" data-magnetic>
+    <span>Book a chair</span><em></em>
+  </a>
+</header>
+
+<!-- side rails -->
+<div class="rail rail--l" aria-hidden="true">
+  <span class="rail__txt">PRECISION PASS — SEQUENCE 001</span>
+</div>
+<div class="rail rail--r" aria-hidden="true">
+  <span class="rail__txt">BROOKLYN · NY · MMXXIII</span>
+  <span class="rail__prog"><b id="progBar"></b></span>
+  <span class="rail__num" id="progNum">00</span>
+</div>
+
+<main id="top">
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero__grid">
+    <div class="hero__left">
+      <p class="hero__eyebrow" data-fade>EST. MMXXIII <s></s> BROOKLYN, NEW YORK</p>
+
+      <h1 class="hero__word pass" data-pass="ltr" data-intro id="heroWord">
+        <span class="pass__box"><span class="hero__wordin">VOLT</span></span>
+      </h1>
+
+      <div class="hero__subrow">
+        <p class="hero__sub pass" data-pass="rtl" data-intro id="heroSub">
+          <span class="pass__box">Precision barbering,<br/>cut like it is being filmed.</span>
+        </p>
+      </div>
+
+      <div class="hero__meta" data-fade-group>
+        <div class="hero__metacell"><i>HOURS</i><b>Tue–Sat / 10:00–20:00</b></div>
+        <div class="hero__metacell"><i>WAITLIST</i><b>3 weeks</b></div>
+        <div class="hero__metacell"><i>CHAIR</i><b>No. 01 — Wythe Ave</b></div>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__plate pass" data-pass="ttb" data-intro id="heroPlate">
+        <span class="pass__box">
+          <svg class="plate" viewBox="0 0 600 820" preserveAspectRatio="xMidYMid slice"><use href="#art-portrait"/></svg>
+          <span class="plate__scan"></span>
+        </span>
+        <span class="plate__cap"><i>FIG. 01</i>MARCUS HAYES — OWNER, VOLT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot" data-fade-group>
+    <div class="scrollcue"><span class="scrollcue__line"></span>SCROLL TO CUT</div>
+    <div class="hero__ticker"><span>NOW BOOKING</span><s></s><span>WALK-INS AFTER 18:00</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ MARQUEE ══════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marqueeTrack">
+    <span>Precision pass <s>✦</s> Sharp is a discipline <s>✦</s> No rush jobs <s>✦</s> Brooklyn <s>✦</s> Est. MMXXIII <s>✦</s> </span>
+    <span>Precision pass <s>✦</s> Sharp is a discipline <s>✦</s> No rush jobs <s>✦</s> Brooklyn <s>✦</s> Est. MMXXIII <s>✦</s> </span>
+    <span>Precision pass <s>✦</s> Sharp is a discipline <s>✦</s> No rush jobs <s>✦</s> Brooklyn <s>✦</s> Est. MMXXIII <s>✦</s> </span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ 01 · THE PASS ══════════════════════════════ -->
+<section class="sec sec--pass" id="pass">
+  <div class="sec__head" data-reveal>
+    <span class="sec__idx">01</span>
+    <span class="sec__name">The Pass</span>
+    <span class="sec__rule"></span>
+    <span class="sec__note">Method</span>
+  </div>
+
+  <div class="manifesto">
+    <h2 class="statement pass" data-pass="ltr" data-len=".62" id="st1">
+      <span class="pass__box">
+        <span class="statement__l">Every line</span>
+        <span class="statement__l">is a <em>decision.</em></span>
+        <span class="statement__l statement__l--out">Nothing here</span>
+        <span class="statement__l">is accidental.</span>
+      </span>
+    </h2>
+
+    <div class="manifesto__side" data-reveal>
+      <p>A haircut is a sequence of about four hundred small choices. Angle of the guard.
+         Pressure of the thumb. Where the weight line breaks. I make them in silence,
+         at speed, and I do not get a second take.</p>
+      <p>The clipper does not negotiate. It either leaves a clean gradient or it does not.
+         That standard is the whole business.</p>
+      <div class="manifesto__sig">— Marcus Hayes</div>
+    </div>
+  </div>
+
+  <div class="stats pass" data-pass="rtl" data-len=".5" id="st2">
+    <span class="pass__box">
+      <div class="stats__grid">
+        <div class="stat"><b data-count="11">0</b><i>Years on the chair</i></div>
+        <div class="stat"><b data-count="45">0</b><i>Minutes per chair</i></div>
+        <div class="stat"><b data-count="2400" data-suffix="+">0</b><i>Cuts documented</i></div>
+        <div class="stat"><b data-count="0">0</b><i>Rush jobs, ever</i></div>
+      </div>
+    </span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ 02 · WORK ══════════════════════════════ -->
+<section class="sec sec--work" id="work">
+  <div class="sec__head" data-reveal>
+    <span class="sec__idx">02</span>
+    <span class="sec__name">Work</span>
+    <span class="sec__rule"></span>
+    <span class="sec__note">Selected</span>
+  </div>
+
+  <article class="plate-card plate-card--l pass" data-pass="ltr" data-len=".55">
+    <span class="pass__box">
+      <div class="plate-card__art">
+        <svg class="plate" viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice"><use href="#art-fade"/></svg>
+        <span class="plate__scan"></span>
+      </div>
+      <div class="plate-card__meta">
+        <span class="plate-card__no">01</span>
+        <h3>Skin Fade</h3>
+        <p>A graduation from skin to weight in under four guards. No clipper-over-comb
+           improvisation — the blend is built guard by guard and checked against the light.</p>
+        <span class="plate-card__tag">GRADUATION / 45 MIN</span>
+      </div>
+    </span>
+  </article>
+
+  <article class="plate-card plate-card--r pass" data-pass="rtl" data-len=".55">
+    <span class="pass__box">
+      <div class="plate-card__art">
+        <svg class="plate" viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice"><use href="#art-lineup"/></svg>
+        <span class="plate__scan"></span>
+      </div>
+      <div class="plate-card__meta">
+        <span class="plate-card__no">02</span>
+        <h3>The Line-Up</h3>
+        <p>Geometry under tension. The hairline is mapped before the trimmer touches skin,
+           then cut to the map — corners at true right angles, temples symmetrical to the millimetre.</p>
+        <span class="plate-card__tag">GEOMETRY / 20 MIN</span>
+      </div>
+    </span>
+  </article>
+
+  <article class="plate-card plate-card--l pass" data-pass="ltr" data-len=".55">
+    <span class="pass__box">
+      <div class="plate-card__art">
+        <svg class="plate" viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice"><use href="#art-beard"/></svg>
+        <span class="plate__scan"></span>
+      </div>
+      <div class="plate-card__meta">
+        <span class="plate-card__no">03</span>
+        <h3>Beard Architecture</h3>
+        <p>Built the way a facade is built: cheek line first, then the jaw, then density.
+           Straight razor finish on the contour, hot towel before and after.</p>
+        <span class="plate-card__tag">STRUCTURE / 30 MIN</span>
+      </div>
+    </span>
+  </article>
+
+  <article class="plate-card plate-card--r pass" data-pass="rtl" data-len=".55">
+    <span class="pass__box">
+      <div class="plate-card__art">
+        <svg class="plate" viewBox="0 0 600 760" preserveAspectRatio="xMidYMid slice"><use href="#art-finish"/></svg>
+        <span class="plate__scan"></span>
+      </div>
+      <div class="plate-card__meta">
+        <span class="plate-card__no">04</span>
+        <h3>The Finish</h3>
+        <p>Tonic, towel, and five minutes of nothing. The cut is photographed before
+           the client stands up — every chair is documented.</p>
+        <span class="plate-card__tag">DETAIL / 10 MIN</span>
+      </div>
+    </span>
+  </article>
+</section>
+
+<!-- ══════════════════════════════ 03 · MENU ══════════════════════════════ -->
+<section class="sec sec--menu" id="menu">
+  <div class="sec__head" data-reveal>
+    <span class="sec__idx">03</span>
+    <span class="sec__name">Menu</span>
+    <span class="sec__rule"></span>
+    <span class="sec__note">USD / cash &amp; card</span>
+  </div>
+
+  <ul class="menu__list pass" data-pass="ttb" data-len=".6" id="menuList">
+    <li class="menu__row pc" data-cursor="cut">
+      <span class="menu__no">A1</span>
+      <span class="menu__nm">The Cut</span>
+      <span class="menu__ds">Consultation, cut, hot towel, finish</span>
+      <span class="menu__tm">45m</span>
+      <span class="menu__pr">$75</span>
+    </li>
+    <li class="menu__row pc" data-cursor="cut">
+      <span class="menu__no">A2</span>
+      <span class="menu__nm">Skin Fade</span>
+      <span class="menu__ds">Zero-to-weight gradient, razor neckline</span>
+      <span class="menu__tm">60m</span>
+      <span class="menu__pr">$95</span>
+    </li>
+    <li class="menu__row pc" data-cursor="cut">
+      <span class="menu__no">B1</span>
+      <span class="menu__nm">Beard Architecture</span>
+      <span class="menu__ds">Cheek + jaw contour, straight razor finish</span>
+      <span class="menu__tm">30m</span>
+      <span class="menu__pr">$55</span>
+    </li>
+    <li class="menu__row pc" data-cursor="cut">
+      <span class="menu__no">B2</span>
+      <span class="menu__nm">Head Shave</span>
+      <span class="menu__ds">Hot lather, two passes, cold stone</span>
+      <span class="menu__tm">45m</span>
+      <span class="menu__pr">$70</span>
+    </li>
+    <li class="menu__row pc" data-cursor="cut">
+      <span class="menu__no">C1</span>
+      <span class="menu__nm">The Full Service</span>
+      <span class="menu__ds">Cut, beard, facial, tonic, photography</span>
+      <span class="menu__tm">90m</span>
+      <span class="menu__pr">$150</span>
+    </li>
+    <li class="menu__row menu__row--res pc" data-cursor="cut">
+      <span class="menu__no">C2</span>
+      <span class="menu__nm">The Chair <em>— monthly</em></span>
+      <span class="menu__ds">One reservation, same time, every month</span>
+      <span class="menu__tm">120m</span>
+      <span class="menu__pr">$180</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════ 04 · THE MAN ══════════════════════════════ -->
+<section class="sec sec--man" id="man">
+  <div class="sec__head" data-reveal>
+    <span class="sec__idx">04</span>
+    <span class="sec__name">The Man</span>
+    <span class="sec__rule"></span>
+    <span class="sec__note">Marcus Hayes</span>
+  </div>
+
+  <div class="man pass" data-pass="ttb" data-len=".62" id="manWrap">
+    <span class="pass__box">
+      <div class="man__inner">
+        <div class="man__plate">
+          <svg class="plate" viewBox="0 0 600 820" preserveAspectRatio="xMidYMid slice"><use href="#art-portrait"/></svg>
+          <span class="plate__scan"></span>
+          <span class="plate__cap plate__cap--in"><i>FIG. 02</i>IN THE CHAIR, 18:40</span>
+        </div>
+        <div class="man__copy">
+          <h3 class="man__name">Marcus<br/>Hayes</h3>
+          <p class="man__lede">Eleven years, three cities, one standard.</p>
+          <p>Marcus started on a folding chair in a Bushwick basement and never
+             treated it like a stepping stone. He trained in London, cut in Lagos and
+             Lisbon, and came back to Brooklyn with a rule he has not broken since:
+             the back of the head is the part the client cannot see, so it is the part
+             that gets checked twice.</p>
+          <p>VOLT opened in MMXXIII as a single-chair room with a waiting list.
+             It still is. The difference is the list got longer.</p>
+          <ul class="man__creds">
+            <li><i>01</i>Certified — BaBylissPRO Pro Academy</li>
+            <li><i>02</i>Trained — London School of Barbering</li>
+            <li><i>03</i>Featured — GQ, Hypebeast, Essence</li>
+            <li><i>04</i>Ambassador — Wahl &amp; You-Barber</li>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ 05 · BOOK ══════════════════════════════ -->
+<section class="sec sec--book" id="book">
+  <div class="sec__head" data-reveal>
+    <span class="sec__idx">05</span>
+    <span class="sec__name">Book</span>
+    <span class="sec__rule"></span>
+    <span class="sec__note">Two weeks out</span>
+  </div>
+
+  <div class="book pass" data-pass="ltr" data-len=".6" id="bookWrap">
+    <span class="pass__box">
+      <div class="book__inner">
+        <h2 class="book__hd">Book<br/>the chair.</h2>
+        <div class="book__side">
+          <p>Six chairs a day. No double booking. If the slot is open, it is yours —
+             confirmations go out within the hour.</p>
+          <a class="btn" href="mailto:chair@volt.barber?subject=Book%20the%20chair" data-cursor="cut" data-magnetic>
+            <span class="btn__t">Request a slot</span>
+            <span class="btn__a">→</span>
+          </a>
+          <div class="book__quick">
+            <a href="tel:+17185550142" data-cursor="link">+1 718 555 0142</a>
+            <a href="#" data-cursor="link">@volt.barber</a>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+
+  <div class="info" data-reveal-group>
+    <div class="info__c"><i>Studio</i><b>118 Wythe Ave<br/>Brooklyn, NY 11249</b></div>
+    <div class="info__c"><i>Hours</i><b>Tue – Fri 10:00 – 20:00<br/>Sat 09:00 – 18:00</b></div>
+    <div class="info__c"><i>Closed</i><b>Sunday &amp; Monday<br/>Walk-ins after 18:00</b></div>
+    <div class="info__c"><i>Payment</i><b>Card, cash, tap<br/>Gratuity never expected</b></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer class="foot">
+  <div class="foot__mark pass" data-pass="ltr" data-len=".5" id="footMark">
+    <span class="pass__box">VOLT</span>
+  </div>
+  <div class="foot__bar">
+    <span>© MMXXIII–MMXXVI VOLT Barbering</span>
+    <span class="foot__links">
+      <a href="#" data-cursor="link">Instagram</a>
+      <a href="#" data-cursor="link">TikTok</a>
+      <a href="#" data-cursor="link">Press</a>
+    </span>
+    <span>Designed &amp; cut in Brooklyn</span>
+  </div>
+</footer>
+
+<noscript>
+  <style>
+    body{overflow:auto!important}
+    .intro,.clipper,.cursor{display:none!important}
+    .pass__box,.pc{clip-path:none!important;opacity:1!important}
+    [data-reveal],[data-fade]{opacity:1!important;transform:none!important}
+  </style>
+</noscript>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
